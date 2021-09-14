@@ -1,0 +1,95 @@
+<html>
+  <head>
+      <title>Search</title>
+  </head>
+  
+  <body>
+      <center>
+            <input type="search" placeholder="Search here..." name = "sear" id="srch" onchange="serch()" style="width: 450px;height: 40px;border-radius: 8px;">
+            <br>
+            <br>
+            <p style="color: rgb(22, 131, 255); font-family: 'Courier New', Courier, monospace;">Popular Social Media:</p>
+            <br>
+            <a href="https://www.instagram.com" id="link">Instagram</a>
+            <a href="https://www.facebook.com" id="link">Facebook</a>
+            <a href="https://www.twitter.com" id="link">Twitter</a>
+            <a href="https://www.youtube.com" id="link">Youtube</a>
+            <br>
+            <br>
+            <p style="color: rgb(22, 131, 255); font-family: 'Courier New', Courier, monospace;">Notes:</p>
+            <form name="addtext" onsubmit="download(this['name'].value, this['text'].value)">
+
+                <textarea style="border-radius: 4px;width: 580px; height: 450px; resize: none;"name="text" placeholder="Type your text here:"></textarea>
+                <br>
+                <br>
+                <input type="text" name="name" value="" placeholder="File Name" style="border-radius: 4px; height: 32px ;width: 580px;">
+                <br>
+                <br>
+                <input type="submit"style="border-radius: 4px;" onClick="addTextHTML();" id= "link" value="Save As HTML">
+                
+                <input type="submit" style="border-radius: 4px;" onClick="addTexttxt();"id= "link" value="Save As TXT">
+            
+                </form>
+           
+        </center>
+      
+  </body>
+</html>
+<script>
+    function serch(){
+        var q =document.getElementById("srch").value;
+        window.open("https://www.google.com/search?q="+q, "_self")
+    }
+    function download(filename, text) {
+  var pom = document.createElement('a');
+  pom.setAttribute('href', 'data:text/plain;charset=utf-8,' + 
+
+encodeURIComponent(text));
+  pom.setAttribute('download', filename);
+
+  pom.style.display = 'none';
+  document.body.appendChild(pom);
+
+  pom.click();
+
+  document.body.removeChild(pom);
+}
+
+function addTextHTML()
+{
+    document.addtext.name.value = document.addtext.name.value + ".html"
+}
+
+function addTextTXT()
+{
+    document.addtext.name.value = document.addtext.name.value + ".txt"
+}
+</script>
+<style>
+body{
+    background-image: url("bbg.jpg");
+}
+#srch{
+    background-image: url("googl.png");
+    position: left;
+    padding-bottom: -2px;
+    background-size: 40px;
+    background-repeat: no-repeat;
+    padding-left: 45px;
+}
+#link{
+    color: whitesmoke;
+    background-color: gray;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 20px;
+    text-decoration: none;
+    border-width: 3px;
+    border-style: solid;
+    border-color: black;
+}
+
+</style>
+    
